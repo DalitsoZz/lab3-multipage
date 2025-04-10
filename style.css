@@ -1,13 +1,13 @@
-/* General Styles */
+/* Global Styles */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Navigation Bar */
 nav {
     display: flex;
     justify-content: space-between;
@@ -16,23 +16,25 @@ nav {
     padding: 1rem 2rem;
     color: white;
 }
+
 .nav-links {
     list-style: none;
     display: flex;
     gap: 1.5rem;
 }
+
 .nav-links a {
     color: white;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease, transform 0.3s ease;
 }
+
 .nav-links a:hover {
     color: #fca311;
-    transform: scale(1.1);  /* Added scale for emphasis */
+    transform: scale(1.1);
 }
 
-/* Hero Section */
 .hero {
     position: relative;
     text-align: center;
@@ -44,14 +46,16 @@ nav {
     align-items: center;
     justify-content: center;
 }
+
 .hero-overlay {
-    background: rgba(0, 0, 0, 0.6); /* Darker overlay for better contrast */
+    background: rgba(0, 0, 0, 0.6);
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
 }
+
 .hero-text {
     position: relative;
     z-index: 2;
@@ -61,10 +65,12 @@ nav {
     border-radius: 8px;
     transition: transform 0.3s ease;
 }
+
 .hero h1 {
     font-size: 2.8rem;
     animation: fadeIn 2s ease-in-out;
 }
+
 .btn {
     background: #fca311;
     color: white;
@@ -77,18 +83,19 @@ nav {
     text-decoration: none;
     font-weight: bold;
 }
+
 .btn:hover {
     background: #e29500;
-    transform: scale(1.1); /* Enlarges the button */
+    transform: scale(1.1);
 }
 
-/* Features Section (Flexbox) */
 .features {
     display: flex;
     justify-content: space-around;
     padding: 3rem;
     gap: 2rem;
 }
+
 .feature-card {
     background: white;
     padding: 2rem;
@@ -98,23 +105,25 @@ nav {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     max-width: 400px;
 }
+
 .feature-card img {
     max-width: 100%;
     border-radius: 8px;
     margin-bottom: 1rem;
 }
+
 .feature-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);  /* Adds shadow on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Services Grid */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     padding: 3rem;
 }
+
 .service-card {
     background: white;
     padding: 2rem;
@@ -122,16 +131,17 @@ nav {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .service-card img {
     max-width: 80px;
     margin-bottom: 1rem;
 }
+
 .service-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);  /* Add shadow on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Contact Form */
 .contact-form {
     max-width: 600px;
     margin: 3rem auto;
@@ -140,14 +150,17 @@ nav {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 .input-group {
     margin-bottom: 1.5rem;
 }
+
 .input-group label {
     display: block;
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
+
 .input-group input,
 .input-group textarea {
     width: 100%;
@@ -156,14 +169,14 @@ nav {
     border-radius: 4px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
 .input-group input:focus,
 .input-group textarea:focus {
     border-color: #fca311;
     outline: none;
-    box-shadow: 0 0 8px rgba(252, 163, 17, 0.5);  /* Subtle glow effect */
+    box-shadow: 0 0 8px rgba(252, 163, 17, 0.5);
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 1.5rem;
@@ -171,13 +184,14 @@ footer {
     color: white;
 }
 
-/* Responsive Design */
+/* Media Queries */
 @media (max-width: 1024px) {
     .features {
         flex-direction: column;
         align-items: center;
     }
 }
+
 @media (max-width: 768px) {
     .nav-links {
         flex-direction: column;
@@ -190,6 +204,7 @@ footer {
         font-size: 2rem;
     }
 }
+
 @media (max-width: 480px) {
     .hero h1 {
         font-size: 1.8rem;
@@ -199,7 +214,7 @@ footer {
     }
 }
 
-/* Animations */
+/* Keyframes for fadeIn effect */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -209,4 +224,150 @@ footer {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Dark theme styles */
+body.dark-theme {
+    background-color: #121212;
+    color: #eee;
+}
+
+body.dark-theme nav {
+    background: #1c1c1c;
+}
+
+body.dark-theme .nav-links a {
+    color: #eee;
+}
+
+body.dark-theme .nav-links a:hover {
+    color: #fca311;
+}
+
+body.dark-theme .hero-text {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+body.dark-theme .feature-card,
+body.dark-theme .service-card,
+body.dark-theme .contact-form {
+    background: #1e1e1e;
+    color: #fff;
+}
+
+body.dark-theme footer {
+    background: #1c1c1c;
+}
+
+/* FAQ Section Styles */
+.faq-section {
+    padding: 3rem;
+    background-color: #fff;
+    color: #333;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 1.5rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.faq-question {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.faq-answer {
+    display: none; /* Initially hidden */
+    line-height: 1.6;
+    padding-top: 0.5rem;
+    font-size: 1rem;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    max-height: 0;
+    opacity: 0;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+    opacity: 1;
+    max-height: 1000px; /* or any large value that fits the content */
+}
+
+/* Dark Theme FAQ Section */
+body.dark-theme .faq-section {
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+/* Styling for the theme toggle button */
+#themeToggle {
+    cursor: pointer;
+    background-color: #fca311;
+    color: #222;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for the toggle button */
+#themeToggle:hover {
+    background-color: #e29500;
+    transform: scale(1.1);
+}
+
+/* Dark theme button styling */
+body.dark-theme #themeToggle {
+    background-color: #555;
+    color: #fff;
+}
+
+body.dark-theme #themeToggle:hover {
+    background-color: #444;
+    transform: scale(1.1);
+}
+
+/* Load Users Button Positioning - Updated */
+#loadUsersButton {
+    padding: 10px 20px;
+    background-color: #fca311;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: block;
+    margin: 2rem auto;
+}
+
+#loadUsersButton:hover {
+    background-color: #e29500;
+    transform: scale(1.1);
+}
+
+/* Dark theme styles for the button */
+body.dark-theme #loadUsersButton {
+    background-color: #555;
+    color: #fff;
+}
+
+body.dark-theme #loadUsersButton:hover {
+    background-color: #444;
+    transform: scale(1.1);
 }
